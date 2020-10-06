@@ -15,11 +15,11 @@ import com.hk.poom.service.RehomeService;
 public class RehomeController {
    
    @Autowired
-   RehomeService RehomeService;
+   RehomeService rehomeService;
    
    @GetMapping("/poom/rehome/list")
    public String rehomeList(Model model ) {
-      model.addAttribute("rehomeList",RehomeService.rehomeList());
+      model.addAttribute("rehomeList",rehomeService.rehomeList());
       
       return "rehome/rehomeList";
    }
@@ -36,7 +36,7 @@ public class RehomeController {
    public String rehomeAddPost(Model model, RehomeAddDTO rehomeadddto ) {
       
       
-      RehomeService.rehomeAdd(rehomeadddto);
+      rehomeService.rehomeAdd(rehomeadddto);
       
       model.addAttribute("rehomeadd",rehomeadddto);
             
@@ -44,15 +44,15 @@ public class RehomeController {
    }
    
    @GetMapping("/poom/rehome/update")
-   public String rehomeUpdate(@RequestParam("bno") int bno, Model model) {
-      model.addAttribute("rehomeUpdate",RehomeService.rehomeGetOne(bno));
+   public String rehomeGetOne(@RequestParam("bno") int bno, Model model) {
+      model.addAttribute("rehomeGetOne",rehomeService.rehomeGetOne(bno));
       return "rehome/rehomeUpdate";
    }
    
    
    @PostMapping("/poom/rehome/update")
    public String rehomeUpdate(Model model, RehomeUpdateDTO rehomeUpdateDTO) {
-	   model.addAttribute("rehomeUpdate",RehomeService.rehomeUpdate(rehomeUpdateDTO));
+	   model.addAttribute("rehomeUpdate",rehomeService.rehomeUpdate(rehomeUpdateDTO));
       
       return "rehome/rehomeUpdatePost";
    }

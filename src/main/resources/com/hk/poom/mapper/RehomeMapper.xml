@@ -40,7 +40,7 @@ set  bno=#{bno}
 ,    vac=#{vac}
 ,    cost=#{cost}
 ,    cat_r=#{cat_r}
-    where bno=#{bno};
+    where bno=#{bno}
      
 update board
 set  type_b=#{type_b}
@@ -53,7 +53,7 @@ set  type_b=#{type_b}
 ,    stmt_b=#{stmt_b}
 ,    cont_b=#{cont_b}
 ,    id_writer=#{id_writer}
-    where bno=#{bno};
+    where bno=#{bno}
 </update>
 
 </mapper>
