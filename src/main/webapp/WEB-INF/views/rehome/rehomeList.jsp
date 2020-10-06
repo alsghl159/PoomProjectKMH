@@ -21,7 +21,7 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">FAQ</h1>
           <p class="mb-4">게시물 리스트
-          &nbsp;&nbsp;&nbsp;<a href="register">등록</a>
+          &nbsp;&nbsp;&nbsp;<a href="add">등록</a>
           
           </p>
 
@@ -40,11 +40,12 @@
                       <th>수정일</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody align="center">
+                  <tr>       
                   <c:forEach items="${rehomeList}" var="rehomeList">
-                    <tr>
-                      <td><a href='get?bno=<c:out value="${rehomeList.title }" />' ><c:out value="${rehomeList.title }" /></td>
-                      <td><c:out value="${rehomeList.mno }" /></a></td>
+                              
+                      <td><a href='update?bno=<c:out value="${rehomeList.bno }" />' ><c:out value="${rehomeList.bno }" /></td>
+                      <td><a href='update?bno=<c:out value="${rehomeList.bno }" />' ><c:out value="${rehomeList.title }" /></a></td>
                       <td><c:out value="${rehomeList.id_writer }" /></td>
                       <td><fmt:formatDate pattern="yyyy-MM-dd" value="${rehomeList.cre_date_b }" /></td>
                       <td><fmt:formatDate pattern="yyyy-MM-dd" value="${rehomeList.mod_date_b }" /></td>

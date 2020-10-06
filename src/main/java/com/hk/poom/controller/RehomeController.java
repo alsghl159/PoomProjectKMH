@@ -5,8 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hk.poom.dto.RehomeAddDTO;
+import com.hk.poom.dto.RehomeUpdateDTO;
 import com.hk.poom.service.RehomeService;
 
 @Controller
@@ -42,16 +44,15 @@ public class RehomeController {
    }
    
    @GetMapping("/poom/rehome/update")
-   public String rehomeUpdate( ) {
-      
-      
+   public String rehomeUpdate(@RequestParam("bno") int bno, Model model) {
+      model.addAttribute("rehomeUpdate",RehomeService.rehomeGetOne(bno));
       return "rehome/rehomeUpdate";
    }
    
    
    @PostMapping("/poom/rehome/update")
-   public String rehomeUpdatePost( ) {
-      
+   public String rehomeUpdate(Model model, RehomeUpdateDTO rehomeUpdateDTO) {
+	   model.addAttribute("rehomeUpdate",RehomeService.rehomeUpdate(rehomeUpdateDTO));
       
       return "rehome/rehomeUpdatePost";
    }
