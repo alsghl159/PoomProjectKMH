@@ -51,10 +51,7 @@ public class RehomeAddDTO {
    Date cre_date_b;
    //수정일
    Date mod_date_b;
-   //중성회여부
-   int neut;
-   //문의수
-   int quecnt;
+
    //조회수
    int viewcnt;
    //좋아요수
@@ -180,21 +177,6 @@ public class RehomeAddDTO {
    public void setMod_date_b(Date mod_date_b) {
       this.mod_date_b = mod_date_b;
    }
-   
-   public int getNeut() {
-      return neut;
-   }
-   public void setNeut(int neut) {
-      this.neut = neut;
-   }
-   
-   public int getQuecnt() {
-      return quecnt;
-   }
-   public void setQuecnt(int quecnt) {
-      this.quecnt = quecnt;
-   }
-   
    public int getViewcnt() {
       return viewcnt;
    }
@@ -230,7 +212,7 @@ public class RehomeAddDTO {
             + ", id_writer=" + id_writer + ", img_r1=" + img_r1 + ", img_r2=" + img_r2 + ", img_r3=" + img_r3
             + ", img_r4=" + img_r4 + ", img_r5=" + img_r5 + ", cat_r=" + cat_r + ", gender=" + gender + ", vac="
             + vac + ", age=" + age + ", nuet=" + nuet + ", cost=" + cost + ", cont_b=" + cont_b + ", cre_date_b="
-            + cre_date_b + ", mod_date_b=" + mod_date_b + ", neut=" + neut + ", quecnt=" + quecnt + ", viewcnt="
+            + cre_date_b + ", mod_date_b=" + mod_date_b + ", viewcnt="
             + viewcnt + ", likecnt=" + likecnt + ", reportcnt=" + reportcnt + ", stmt_b=" + stmt_b + "]";
    }
    
