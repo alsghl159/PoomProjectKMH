@@ -35,7 +35,8 @@
     <option value="2">모름</option>
   </select><br>
   분양가<input type="text" name="cost"><br>
-  조회수<input type="text" name="viewcnt"><br>
+  조회수
+
   좋아요수<input type="text" name="likecnt"><br>
   신고수<input type="text" name="reportcnt"><br>
   회원상태<input type="text" name="stmt_b"><br>

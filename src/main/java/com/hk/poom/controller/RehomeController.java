@@ -53,6 +53,8 @@ public class RehomeController {
    @PostMapping("/poom/rehome/update")
    public String rehomeUpdate(Model model, RehomeUpdateDTO rehomeUpdateDTO) {
 	   model.addAttribute("rehomeUpdate",rehomeService.rehomeUpdate(rehomeUpdateDTO));
+	   model.addAttribute("rehomeUpdate1",rehomeService.rehomeUpdate1(rehomeUpdateDTO));
+
       
       return "rehome/rehomeUpdatePost";
    }
@@ -71,5 +73,22 @@ public class RehomeController {
       
       return "rehome/rehomeList";
    }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 
 }

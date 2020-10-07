@@ -42,6 +42,9 @@ set  bno=#{bno}
 ,    cat_r=#{cat_r}
     where bno=#{bno}
      
+
+</update>
+<update id="rehomeUpdate1">
 update board
 set  type_b=#{type_b}
 ,    bno=#{bno}
@@ -54,6 +57,6 @@ set  type_b=#{type_b}
 ,    cont_b=#{cont_b}
 ,    id_writer=#{id_writer}
     where bno=#{bno}
-</update>
-
+    
+    </update>
 </mapper>
