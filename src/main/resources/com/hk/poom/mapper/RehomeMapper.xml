@@ -5,6 +5,9 @@
 <mapper namespace="com.hk.poom.mapper.RehomeMapper">
 
 <insert id="rehomeAdd" parameterType="com.hk.poom.dto.RehomeAddDTO">
+<selectKey resultType="int" keyProperty="bno" order="BEFORE">
+        SELECT MAX(BNO)+1 FROM BOARD 
+    </selectKey>
 insert all
 into rehome (bno, rno, mno, gender, age, neut, vac, cost, cat_r)
 values (#{bno},#{rno}, #{mno}, #{gender}, #{age}, #{neut}, #{vac}, #{cost},#{cat_r})
@@ -50,7 +53,7 @@ set  type_b=#{type_b}
 ,    bno=#{bno}
 ,    title=#{title}
 ,    mod_date_b=sysdate
-,    viewcnt=#{viewcnt}
+,    viewcnt=#{viewcnt}+1
 ,    likecnt=#{likecnt}
 ,    reportcnt=#{reportcnt}
 ,    stmt_b=#{stmt_b}
@@ -59,4 +62,21 @@ set  type_b=#{type_b}
     where bno=#{bno}
     
     </update>
+    
+<delete id="rehomeDelete">
+{
+call
+begin
+delete from rehome where bno=#{bno};
+delete from board where bno=#{bno};
+end
+}
+</delete> 
+
+    
+    
+    
+    
+    
+    
 </mapper>

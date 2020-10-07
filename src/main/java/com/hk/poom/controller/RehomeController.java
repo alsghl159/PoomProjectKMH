@@ -33,12 +33,12 @@ public class RehomeController {
    
    
    @PostMapping("/poom/rehome/add")
-   public String rehomeAddPost(Model model, RehomeAddDTO rehomeadddto ) {
+   public String rehomeAddPost(Model model, RehomeAddDTO rehomeAddDTO ) {
       
       
-      rehomeService.rehomeAdd(rehomeadddto);
+      rehomeService.rehomeAdd(rehomeAddDTO);
       
-      model.addAttribute("rehomeadd",rehomeadddto);
+      model.addAttribute("rehomeadd",rehomeAddDTO);
             
       return "rehome/rehomeAddPost";
    }
@@ -59,22 +59,24 @@ public class RehomeController {
       return "rehome/rehomeUpdatePost";
    }
    
+ 
+   
    @GetMapping("/poom/rehome/delete")
-   public String rehomeDelete( ) {
-      
+   public String rehomeDelete(@RequestParam("bno")int bno,Model model) {
+
+      model.addAttribute("bno",bno);
       
       return "rehome/rehomeDelete";
    }
    
-   
    @PostMapping("/poom/rehome/delete")
-   public String rehomeDeletePost( ) {
-      
-      
-      return "rehome/rehomeList";
+   public String rehomeDeletePost(@RequestParam("bno")int bno) throws Exception{
+      rehomeService.rehomeDelete(bno);
+        
+      return "redirect:/poom/rehome/list";
    }
-   
-   
+
+}
    
    
    
@@ -91,4 +93,3 @@ public class RehomeController {
    
    
 
-}

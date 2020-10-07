@@ -11,29 +11,24 @@
 회원 수정
 
 <form id='update' action='update' method='post'>
-  <select form='update' name="type_b">
-    <option value="0" selected>분양</option>
-    <option value="1">소통</option>
-    <option value="2">공지</option>
-  </select>
-  <br><br>
+<br>
   게시판번호(읽기만)<input type="text" name="bno" value='${rehomeGetOne.bno }' readonly><br>
   분양글번호(읽기만)<input type="text" name="rno" value='${rehomeGetOne.rno }'readonly><br>
   회원번호(읽기만)<input type="text" name="mno" value='${rehomeGetOne.mno }'readonly><br>
   성별<select form='update' name="gender" ><br>
     <option value="0">암컷</option>
     <option value="1">수컷</option>
-    <option value="2" selected>모름</option>
+    <option value="2">모름</option>
   </select><br>
   접종여부<select name="neut" form='update'><br>
     <option value="0">했음</option>
     <option value="1">안했음</option>
-    <option value="2" selected>모름</option>
+    <option value="2">모름</option>
   </select><br>
   중성화여부<select name="vac" form='update'><br>
     <option value="0">했음</option>
     <option value="1">안했음</option>
-    <option value="2" selected>모름</option>
+    <option value="2">모름</option>
   </select><br>
   분양가<input type="text" name="cost" value='${rehomeGetOne.cost }'><br>
  
