@@ -20,6 +20,7 @@ public class RehomeService {
 	public List<RehomeAddDTO> rehomeList( ) {
 		return rehomeMapper.rehomeList( );
 	}
+
    
 	public int rehomeAdd( RehomeAddDTO rehomeAddDTO ) {
 		return rehomeMapper.rehomeAdd( rehomeAddDTO );

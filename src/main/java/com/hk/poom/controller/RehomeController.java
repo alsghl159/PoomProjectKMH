@@ -23,6 +23,7 @@ public class RehomeController {
       
       return "rehome/rehomeList";
    }
+
    
    @GetMapping("/poom/rehome/add")
    public String rehomeAdd(Model model ) {

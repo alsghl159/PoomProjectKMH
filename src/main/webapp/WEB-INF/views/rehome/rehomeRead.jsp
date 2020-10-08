@@ -1,25 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script>
-$().ready(function(){
-	
-});
-
-
-</script>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Rehome List</title>
+<title>rehome read</title>
 <jsp:include page="../include/inHead.jsp"></jsp:include>
 </head>
 <jsp:include page="../include/header.jsp"></jsp:include>
+<h1>게시물 보기</h1>
 
-    <div id="content-wrapper" class="d-flex flex-column">
+
+ <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
       <div id="content">
@@ -30,19 +22,9 @@ $().ready(function(){
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">FAQ</h1>
           <p class="mb-4">게시물 리스트
-          &nbsp;&nbsp;&nbsp;<a href="add">등록</a>
+          &nbsp;&nbsp;&nbsp;
           
           </p>
-
-			<select name="cat_r" id="cat_r">
-    		<option value="0" selected>동물 분류</option>
-   			<option value="1">멍멍</option>
-  	  	    <option value="2">냥냥</option>
-  		    <option value="3">첨벙</option>
-  		    <option value="4">짹짹</option>
-		    </select>
-  
-                   
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -53,7 +35,7 @@ $().ready(function(){
                   <thead>
                     <tr>
                       <th>카테고리</th>
-                  
+                      <th>분양 카테고리</th>
                       <th>게시글 번호</th>
                       <th>분양글 번호</th>
                       <th>제목</th>
@@ -71,16 +53,12 @@ $().ready(function(){
                     </tr>
                   </thead>
                   <tbody>
-                  <c:forEach items="${rehomeList}" var="rehomeList">
-                    <tr>
-                      <td><c:choose>
-                          <c:when test="${rehomeList.type_b eq '0' }">분양</c:when>
-                          <c:when test="${rehomeList.type_b eq '1' }">소통</c:when>
-                          <c:when test="${rehomeList.type_b eq '2' }">공지</c:when>
 
-                          
-                          </c:choose></td>
-                     
+                    <tr>
+                      <td>${rehomeList.type_b }</td>
+                       <td><c:choose>
+                          <c:when test="${rehomeList.cat_r eq '0' }">개</c:when>
+                          <c:when test="${rehomeList.cat_r eq '1' }">고양이</c:when></c:choose> </td>
                         <td><c:out value="${rehomeList.bno }" /></td>
                       <td><c:out value="${rehomeList.rno }" /></td>
                        <td><c:out value="${rehomeList.title }" /></a></td>
@@ -96,7 +74,7 @@ $().ready(function(){
                       <td><a href='update?bno=<c:out value="${rehomeList.bno}" />' ><c:out value="수정" /></a></td>
                       <td><a href='delete?bno=<c:out value="${rehomeList.bno}" />' ><c:out value="삭제" /></a></td>
                     </tr>
-                    </c:forEach>
+
                   </tbody>
                 </table>
               </div>
@@ -108,5 +86,4 @@ $().ready(function(){
 
       </div>
       <!-- End of Main Content -->
-
 <jsp:include page="../include/footer.jsp"></jsp:include>

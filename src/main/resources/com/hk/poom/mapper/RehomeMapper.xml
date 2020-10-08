@@ -4,6 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hk.poom.mapper.RehomeMapper">
 
+
+
+<select id="rehomeList" resultType="com.hk.poom.dto.RehomeAddDTO">
+SELECT * FROM REHOME r, BOARD b WHERE r.BNO = b.BNO ORDER BY cre_date_b asc
+</select>
+
 <insert id="rehomeAdd" parameterType="com.hk.poom.dto.RehomeAddDTO">
 <selectKey resultType="int" keyProperty="bno" order="BEFORE">
         SELECT MAX(BNO)+1 FROM BOARD 
@@ -23,10 +29,6 @@ values (#{type_b},#{bno}, #{title}, sysdate, sysdate, #{viewcnt}, #{likecnt}, #{
    values (#{type_b},#{bno}, #{title}, sysdate, sysdate, #{viewcnt}, #{likecnt}, #{reportcnt}, #{stmt_b}, #{cont_b}, #{id_writer})
    select * from dual-->
 </insert>
-
-<select id="rehomeList" resultType="com.hk.poom.dto.RehomeAddDTO">
-SELECT * FROM REHOME r, BOARD b WHERE r.BNO = b.BNO 
-</select>
 
 <select id="rehomeGetOne" resultType="com.hk.poom.dto.RehomeUpdateDTO">
 select * from BOARD  where BNO=#{bno} 
