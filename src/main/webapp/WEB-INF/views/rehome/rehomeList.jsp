@@ -4,10 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script>
-$().ready(function(){
-	
-});
-
+//리스트에서 분양 카테고리 값을 선택했을때 값에 맞는 목록만 출력하기
 
 </script>
 <!DOCTYPE html>
